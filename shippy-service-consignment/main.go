@@ -8,8 +8,8 @@ import (
 	// Import the generated protobuf code
 	"context"
 
+	pb "github.com/Mikhgit/shippy/shippy-service-consignment/proto/consignment"
 	"github.com/micro/go-micro/v2"
-	pb "shippy-service-consignment/proto/consignment"
 )
 
 type repository interface {
