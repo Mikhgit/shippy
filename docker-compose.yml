@@ -3,10 +3,6 @@ version: '3.5'
 
 services:
 
-  # Commands
-  #  cli:
-  #    build: ./shippy-cli-consignment
-
   # Services
   consignment:
     restart: always
@@ -28,6 +24,10 @@ services:
     environment:
       MICRO_SERVER_ADDRESS: ":50051"
       DB_HOST: "mongodb://datastore:27017"
+
+  # Commands
+  cli:
+    build: ./shippy-cli-consignment
 
   # Database tier
   datastore:
