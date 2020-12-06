@@ -1,4 +1,4 @@
-module shippy-service-consignment
+module github.com/Mikhgit/shippy/shippy-service-consignment
 
 go 1.15
 

@@ -1,4 +1,4 @@
-module shippy-service-vessel
+module github.com/Mikhgit/shippy/shippy-service-vessel
 
 go 1.15
 
