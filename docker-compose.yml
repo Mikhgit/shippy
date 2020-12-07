@@ -39,6 +39,8 @@ services:
   # Commands
   cli:
     build: ./shippy-cli-consignment
+  user-cli:
+    build: ./shippy-cli-user
 
   # Database tier
   datastore:
