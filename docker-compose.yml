@@ -52,7 +52,7 @@ services:
     volumes:
       - ./data/db:/data/db # ensures data persistence between restarting
     ports:
-      - 27017
+      - 27017:27017
     command: mongod --logpath=/dev/null
 
   database:

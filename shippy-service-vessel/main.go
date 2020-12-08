@@ -11,7 +11,7 @@ import (
 
 func main() {
 	service := micro.NewService(
-		micro.Name("shippy.service.vessel"),
+		micro.Name("go.micro.srv.vessel"),
 	)
 
 	service.Init()
@@ -27,10 +27,8 @@ func main() {
 	vesselCollection := client.Database("shippy").Collection("vessels")
 	repository := &MongoRepository{vesselCollection}
 
-	h := &handler{repository}
-
 	// Register our implementation with
-	if err := pb.RegisterVesselServiceHandler(service.Server(), h); err != nil {
+	if err := pb.RegisterVesselServiceHandler(service.Server(), &handler{repository}); err != nil {
 		log.Panic(err)
 	}
 

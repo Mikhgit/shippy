@@ -1,52 +1,64 @@
+// shippy-cli-user/main.go
 package main
 
 import (
-	"context"
-	"fmt"
 	"log"
+	"os"
 
-	proto "github.com/Mikhgit/shippy/shippy-service-user/proto/user"
-	"github.com/micro/cli/v2"
-	"github.com/micro/go-micro/v2"
+	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/user"
+	micro "github.com/micro/go-micro/v2"
+	microclient "github.com/micro/go-micro/v2/client"
+	"golang.org/x/net/context"
 )
 
-func createUser(ctx context.Context, service micro.Service, user *proto.User) error {
-	client := proto.NewUserService("shippy.service.user", service.Client())
-	rsp, err := client.Create(ctx, user)
+func main() {
+
+	srv := micro.NewService(
+
+		micro.Name("go.micro.srv.user-cli"),
+		micro.Version("latest"),
+	)
+
+	// Init will parse the command line flags.
+	srv.Init()
+
+	client := pb.NewUserService("go.micro.srv.user", microclient.DefaultClient)
+
+	name := "Ewan Valentine"
+	email := "ewan.valentine89@gmail.com"
+	password := "test123"
+	company := "BBC"
+
+	r, err := client.Create(context.TODO(), &pb.User{
+		Name:     name,
+		Email:    email,
+		Password: password,
+		Company:  company,
+	})
 	if err != nil {
-		return err
+		log.Fatalf("Could not create: %v", err)
+	}
+	log.Printf("Created: %s", r.User.Id)
+
+	getAll, err := client.GetAll(context.Background(), &pb.Request{})
+	if err != nil {
+		log.Fatalf("Could not list users: %v", err)
+	}
+	for _, v := range getAll.Users {
+		log.Println(v)
 	}
 
-	// print the response
-	fmt.Println("Response: ", rsp.User)
+	authResponse, err := client.Auth(context.TODO(), &pb.User{
+		Email:    email,
+		Password: password,
+	})
 
-	return nil
-}
+	if err != nil {
+		log.Fatalf("Could not authenticate user: %s error: %v\n", email, err)
+	}
 
-func main() {
-	// create and initialise a new service
-	service := micro.NewService()
-	service.Init(
-		micro.Action(func(c *cli.Context) error {
-			name := c.String("name")
-			email := c.String("email")
-			company := c.String("company")
-			password := c.String("password")
+	log.Printf("Your access token is: %s \n", authResponse.Token)
 
-			ctx := context.Background()
-			user := &proto.User{
-				Name:     name,
-				Email:    email,
-				Company:  company,
-				Password: password,
-			}
-
-			if err := createUser(ctx, service, user); err != nil {
-				log.Println("error creating user: ", err.Error())
-				return err
-			}
-
-			return nil
-		}),
-	)
+	// let's just exit because
+	os.Exit(0)
 }

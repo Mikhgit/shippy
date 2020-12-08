@@ -70,7 +70,7 @@ func UnmarshalUser(user *User) *pb.User {
 
 func (r *PostgresRepository) GetAll(ctx context.Context) ([]*User, error) {
 	users := make([]*User, 0)
-	if err := r.db.GetContext(ctx, users, "select * from users"); err != nil {
+	if err := r.db.SelectContext(ctx, &users, "select * from users"); err != nil {
 		return users, err
 	}
 
@@ -78,12 +78,12 @@ func (r *PostgresRepository) GetAll(ctx context.Context) ([]*User, error) {
 }
 
 func (r *PostgresRepository) Get(ctx context.Context, id string) (*User, error) {
-	var user *User
-	if err := r.db.GetContext(ctx, &user, "select * from users where id = $1", id); err != nil {
+	users := make([]*User, 0)
+	if err := r.db.Select(&users, "select * from users where id = $1", id); err != nil {
 		return nil, err
 	}
 
-	return user, nil
+	return users[0], nil
 }
 
 func (r *PostgresRepository) Create(ctx context.Context, user *User) error {
@@ -94,10 +94,11 @@ func (r *PostgresRepository) Create(ctx context.Context, user *User) error {
 }
 
 func (r *PostgresRepository) GetByEmail(ctx context.Context, email string) (*User, error) {
-	query := "select * from users where email = $1"
-	var user *User
-	if err := r.db.GetContext(ctx, &user, query, email); err != nil {
+	users := make([]*User, 0)
+
+	if err := r.db.Select(&users, "select * from users where email = $1", email); err != nil {
 		return nil, err
 	}
-	return user, nil
+
+	return users[0], nil
 }

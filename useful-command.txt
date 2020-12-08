@@ -9,6 +9,8 @@ docker run -p 50051:50051 \
       -e MICRO_SERVER_ADDRESS=:50051 \
       shippy-service-consignment
 docker rmi 3fc705179b17 --force
+
+--net="host" - run our containers on our host network, i.e 127.0.0.1 or localhost
 ______________________________________
 go mod init shippy-service
 go get google.golang.org/grpc

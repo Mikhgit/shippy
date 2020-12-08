@@ -3,13 +3,14 @@ package main
 
 import (
 	"context"
+	"go.mongodb.org/mongo-driver/bson"
 
 	pb "github.com/Mikhgit/shippy/shippy-service-consignment/proto/consignment"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
 type Consignment struct {
-	ID          string     `json:"id"`
+	ID          string     `json:"_id,omitempty" bson:"_id,omitempty"`
 	Weight      int32      `json:"weight"`
 	Description string     `json:"description"`
 	Containers  Containers `json:"containers"`
@@ -104,7 +105,10 @@ func (repository *MongoRepository) Create(ctx context.Context, consignment *Cons
 
 // GetAll -
 func (repository *MongoRepository) GetAll(ctx context.Context) ([]*Consignment, error) {
-	cur, err := repository.collection.Find(ctx, nil, nil)
+	cur, err := repository.collection.Find(ctx, bson.D{})
+	if err != nil {
+		return nil, err
+	}
 	var consignments []*Consignment
 	for cur.Next(ctx) {
 		var consignment *Consignment

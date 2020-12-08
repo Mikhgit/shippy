@@ -44,7 +44,7 @@ func main() {
 
 	// Create a new service. Optionally include some options here.
 	service := micro.NewService(
-		micro.Name("shippy.service.user"),
+		micro.Name("go.micro.srv.user"),
 		micro.Version("latest"),
 	)
 

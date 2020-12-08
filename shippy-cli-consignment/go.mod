@@ -1,6 +1,6 @@
 module shippy-cli
 
-go 1.15
+go 1.14
 
 require (
 	github.com/Mikhgit/shippy/shippy-service-consignment v0.0.0-20201206191232-d902cad03281

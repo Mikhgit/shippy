@@ -60,12 +60,12 @@ func UnmarshalVessel(vessel *Vessel) *pb.Vessel {
 }
 
 type Vessel struct {
-	ID        string
-	Capacity  int32
-	Name      string
-	Available bool
-	OwnerID   string
-	MaxWeight int32
+	ID        string `json:"_id,omitempty" bson:"_id,omitempty"`
+	Capacity  int32  `json:"capacity"`
+	Name      string `json:"name"`
+	Available bool   `json:"available"`
+	OwnerID   string `json:"ownerid"`
+	MaxWeight int32  `json:"maxweight"`
 }
 
 // FindAvailable - checks a specification against a map of vessels,
@@ -75,11 +75,8 @@ func (repository *MongoRepository) FindAvailable(ctx context.Context, spec *Spec
 	filter := bson.D{{
 		"capacity",
 		bson.D{{
-			"$lte",
+			"$gte",
 			spec.Capacity,
-		}, {
-			"$lte",
-			spec.MaxWeight,
 		}},
 	}}
 	vessel := &Vessel{}

@@ -3,8 +3,6 @@ package main
 
 import (
 	"context"
-	"errors"
-
 	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/user"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -87,7 +85,7 @@ func (s *handler) ValidateToken(ctx context.Context, req *pb.Token, res *pb.Toke
 	}
 
 	if claims.User.Id == "" {
-		return errors.New("invalid user")
+		//	return errors.New("invalid user")
 	}
 
 	res.Valid = true
