@@ -39,7 +39,7 @@ func AuthWrapper(fn server.HandlerFunc) server.HandlerFunc {
 		log.Println("Authenticating with token: ", token)
 
 		// Auth here
-		authClient := userService.NewUserService("go.micro.srv.user", client.DefaultClient)
+		authClient := userService.NewUserService("shippy.auth", client.DefaultClient)
 		_, err := authClient.ValidateToken(context.Background(), &userService.Token{
 			Token: token,
 		})
@@ -79,7 +79,7 @@ func main() {
 	consignmentCollection := client.Database("shippy").Collection("consignments")
 
 	repository := &MongoRepository{consignmentCollection}
-	vesselClient := vesselProto.NewVesselService("go.micro.srv.vessel", srv.Client())
+	vesselClient := vesselProto.NewVesselService("shippy.vessel", srv.Client())
 	h := &handler{repository, vesselClient}
 
 	// Register handlers

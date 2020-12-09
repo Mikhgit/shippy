@@ -62,3 +62,8 @@ services:
       POSTGRES_USER: "admin"
     ports:
       - 5432:5432
+
+  broker:
+    image: nats
+    ports:
+      - 4222:4222

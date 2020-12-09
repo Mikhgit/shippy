@@ -3,9 +3,10 @@ package main
 import (
 	"log"
 
-	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/user"
+	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/auth"
 	"github.com/micro/go-micro/v2"
 	_ "github.com/micro/go-plugins/broker/nats/v2"
+	_ "github.com/micro/go-plugins/registry/mdns/v2"
 )
 
 const schema = `
@@ -25,14 +26,9 @@ func main() {
 	// closing it again before exit.
 	db, err := NewConnection()
 	if err != nil {
-		log.Panic(err)
-	}
-
-	defer db.Close()
-
-	if err != nil {
 		log.Fatalf("Could not connect to DB: %v", err)
 	}
+	defer db.Close()
 
 	// Run schema query on start-up, as we're using "create if not exists"
 	// this will only be ran once. In order to create updates, you'll need to
@@ -45,7 +41,7 @@ func main() {
 
 	// Create a new service. Optionally include some options here.
 	service := micro.NewService(
-		micro.Name("go.micro.srv.user"),
+		micro.Name("shippy.auth"),
 		micro.Version("latest"),
 		//	micro.Broker(nats.NewBroker()),
 	)
@@ -56,7 +52,7 @@ func main() {
 	publisher := micro.NewEvent("user.created", service.Client())
 
 	// Register handler
-	if err := pb.RegisterUserServiceHandler(service.Server(), &handler{
+	if err := pb.RegisterAuthHandler(service.Server(), &handler{
 		repo, tokenService, publisher,
 	}); err != nil {
 		log.Panic(err)

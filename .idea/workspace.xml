@@ -17,15 +17,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1167cba-b8af-46e4-9b68-68d761a724e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.run/service-user.run.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shippy-service-email/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shippy-service-email/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shippy-service-email/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-cli-consignment/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-cli-consignment/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-cli-user/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-cli-user/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-consignment/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-consignment/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-email/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-email/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shippy-service-user/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shippy-service-user/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shippy-service-user/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/handler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shippy-service-user/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-user/proto/user/user.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/proto/auth/auth.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-user/proto/user/user.pb.micro.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/proto/auth/auth.pb.micro.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-user/proto/user/user.proto" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/proto/auth/auth.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-user/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-user/token_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/token_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-vessel/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-vessel/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +209,8 @@
     <MESSAGE value="Add shippy-service-user" />
     <MESSAGE value="Add shippy-cli-user" />
     <MESSAGE value="Bug fix (lesson 4)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix (lesson 4)" />
+    <MESSAGE value="Add shippy-service-email (lesson 5)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add shippy-service-email (lesson 5)" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
@@ -237,14 +245,14 @@
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state x="813" y="280" width="817" height="604" key="#xdebugger.evaluate/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607452098532" />
-    <state x="577" y="135" width="912" height="646" key="CommitChangelistDialog2" timestamp="1607464336669">
+    <state x="577" y="135" width="912" height="646" key="CommitChangelistDialog2" timestamp="1607531225392">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state x="577" y="135" width="912" height="646" key="CommitChangelistDialog2/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607464336669" />
-    <state x="482" y="138" width="1092" height="646" key="DiffContextDialog" timestamp="1607464326412">
+    <state x="577" y="135" width="912" height="646" key="CommitChangelistDialog2/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607531225392" />
+    <state x="482" y="138" width="1092" height="646" key="DiffContextDialog" timestamp="1607531169168">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state x="482" y="138" width="1092" height="646" key="DiffContextDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607464326412" />
+    <state x="482" y="138" width="1092" height="646" key="DiffContextDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607531169168" />
     <state x="761" y="291" width="424" height="491" key="FileChooserDialogImpl" timestamp="1607376581430">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
@@ -253,59 +261,59 @@
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state x="826" y="454" width="344" height="178" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607465609186" />
-    <state width="1802" height="367" key="GridCell.Tab.0.bottom" timestamp="1607530935595">
+    <state width="1802" height="367" key="GridCell.Tab.0.bottom" timestamp="1607542845174">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state width="1320" height="192" key="GridCell.Tab.0.bottom/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607193553339" />
-    <state width="1802" height="367" key="GridCell.Tab.0.bottom/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607530935595" />
-    <state width="1802" height="367" key="GridCell.Tab.0.center" timestamp="1607530935595">
+    <state width="1802" height="367" key="GridCell.Tab.0.bottom/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
+    <state width="1802" height="367" key="GridCell.Tab.0.center" timestamp="1607542845174">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state width="1320" height="192" key="GridCell.Tab.0.center/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607193553338" />
-    <state width="1802" height="367" key="GridCell.Tab.0.center/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607530935595" />
-    <state width="1802" height="367" key="GridCell.Tab.0.left" timestamp="1607530935595">
+    <state width="1802" height="367" key="GridCell.Tab.0.center/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
+    <state width="1802" height="367" key="GridCell.Tab.0.left" timestamp="1607542845174">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state width="1320" height="192" key="GridCell.Tab.0.left/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607193553338" />
-    <state width="1802" height="367" key="GridCell.Tab.0.left/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607530935595" />
-    <state width="1802" height="367" key="GridCell.Tab.0.right" timestamp="1607530935595">
+    <state width="1802" height="367" key="GridCell.Tab.0.left/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
+    <state width="1802" height="367" key="GridCell.Tab.0.right" timestamp="1607542845174">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state width="1320" height="192" key="GridCell.Tab.0.right/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607193553338" />
-    <state width="1802" height="367" key="GridCell.Tab.0.right/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607530935595" />
-    <state width="1802" height="367" key="GridCell.Tab.1.bottom" timestamp="1607530935595">
+    <state width="1802" height="367" key="GridCell.Tab.0.right/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
+    <state width="1802" height="367" key="GridCell.Tab.1.bottom" timestamp="1607542845174">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state width="1802" height="367" key="GridCell.Tab.1.bottom/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607530935595" />
-    <state width="1802" height="367" key="GridCell.Tab.1.center" timestamp="1607530935595">
+    <state width="1802" height="367" key="GridCell.Tab.1.bottom/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
+    <state width="1802" height="367" key="GridCell.Tab.1.center" timestamp="1607542845174">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state width="1802" height="367" key="GridCell.Tab.1.center/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607530935595" />
-    <state width="1802" height="367" key="GridCell.Tab.1.left" timestamp="1607530935595">
+    <state width="1802" height="367" key="GridCell.Tab.1.center/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
+    <state width="1802" height="367" key="GridCell.Tab.1.left" timestamp="1607542845174">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state width="1802" height="367" key="GridCell.Tab.1.left/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607530935595" />
-    <state width="1802" height="367" key="GridCell.Tab.1.right" timestamp="1607530935595">
+    <state width="1802" height="367" key="GridCell.Tab.1.left/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
+    <state width="1802" height="367" key="GridCell.Tab.1.right" timestamp="1607542845174">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state width="1802" height="367" key="GridCell.Tab.1.right/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607530935595" />
+    <state width="1802" height="367" key="GridCell.Tab.1.right/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1607448597197">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607448597197" />
-    <state x="770" y="223" width="442" height="640" key="RollbackChangesDialog" timestamp="1607287200943">
+    <state x="770" y="223" width="442" height="640" key="RollbackChangesDialog" timestamp="1607531203095">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state x="770" y="223" width="442" height="640" key="RollbackChangesDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607287200943" />
+    <state x="770" y="223" width="442" height="640" key="RollbackChangesDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607531203095" />
     <state x="292" y="214" width="1373" height="639" key="SettingsEditor" timestamp="1607376595224">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state x="2092" y="445" width="1022" height="737" key="SettingsEditor/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607108868753" />
     <state x="292" y="214" width="1373" height="639" key="SettingsEditor/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607376595224" />
-    <state x="591" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1607346812269">
+    <state x="591" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1607532513301">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state x="591" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607346812269" />
+    <state x="591" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607532513301" />
     <state width="924" height="418" key="XDebugger.FullValuePopup" timestamp="1607451551668">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
@@ -326,11 +334,11 @@
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state x="521" y="252" width="939" height="583" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607421450055" />
-    <state x="812" y="153" width="839" height="580" key="find.popup" timestamp="1607447662305">
+    <state x="812" y="153" width="839" height="580" key="find.popup" timestamp="1607539927222">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state x="2289" y="547" width="620" height="578" key="find.popup/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607109016488" />
-    <state x="812" y="153" width="839" height="580" key="find.popup/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607447662305" />
+    <state x="812" y="153" width="839" height="580" key="find.popup/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607539927222" />
     <state x="800" y="452" width="381" height="183" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1607279817640">
       <screen x="72" y="441" width="1848" height="639" />
     </state>

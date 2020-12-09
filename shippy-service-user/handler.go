@@ -3,9 +3,12 @@ package main
 
 import (
 	"context"
-	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/user"
+	"errors"
+	"fmt"
+	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/auth"
 	micro "github.com/micro/go-micro/v2"
 	"golang.org/x/crypto/bcrypt"
+	"log"
 )
 
 type authable interface {
@@ -44,11 +47,14 @@ func (s *handler) GetAll(ctx context.Context, req *pb.Request, res *pb.Response)
 }
 
 func (s *handler) Auth(ctx context.Context, req *pb.User, res *pb.Token) error {
+	log.Println("Logging in with:", req.Email, req.Password)
 	user, err := s.repository.GetByEmail(ctx, req.Email)
 	if err != nil {
 		return err
 	}
 
+	// Compares our given password against the hashed password
+	// stored in the database
 	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); err != nil {
 		return err
 	}
@@ -63,20 +69,21 @@ func (s *handler) Auth(ctx context.Context, req *pb.User, res *pb.Token) error {
 }
 
 func (s *handler) Create(ctx context.Context, req *pb.User, res *pb.Response) error {
+	log.Println("Creating user: ", req)
 	// Generates a hashed version of our password
 	hashedPass, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 	if err != nil {
-		return err
+		return errors.New(fmt.Sprintf("error hashing password: %v", err))
 	}
 
 	req.Password = string(hashedPass)
 	if err := s.repository.Create(ctx, MarshalUser(req)); err != nil {
-		return err
+		return errors.New(fmt.Sprintf("error creating user: %v", err))
 	}
 
 	res.User = req
 	if err := s.Publisher.Publish(ctx, req); err != nil {
-		return err
+		return errors.New(fmt.Sprintf("error publishing event: %v", err))
 	}
 
 	// Strip the password back out, so's we're not returning it
@@ -87,6 +94,7 @@ func (s *handler) Create(ctx context.Context, req *pb.User, res *pb.Response) er
 }
 
 func (s *handler) ValidateToken(ctx context.Context, req *pb.Token, res *pb.Token) error {
+	// Decode token
 	claims, err := s.tokenService.Decode(req.Token)
 	if err != nil {
 		return err

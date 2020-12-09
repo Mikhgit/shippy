@@ -11,7 +11,7 @@ import (
 
 func main() {
 	service := micro.NewService(
-		micro.Name("go.micro.srv.vessel"),
+		micro.Name("shippy.vessel"),
 	)
 
 	service.Init()

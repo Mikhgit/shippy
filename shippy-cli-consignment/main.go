@@ -34,7 +34,7 @@ func main() {
 
 	srv := micro.NewService(
 
-		micro.Name("go.micro.crv.consignment-cli"),
+		micro.Name("shippy.consignment-cli"),
 		micro.Version("latest"),
 	)
 
@@ -42,7 +42,7 @@ func main() {
 	srv.Init()
 
 	// Create new greeter client
-	client := pb.NewShippingService("go.micro.srv.consignment", microclient.DefaultClient)
+	client := pb.NewShippingService("shippy.consignment", microclient.DefaultClient)
 
 	// Contact the server and print out its response.
 	file := defaultFilename

@@ -4,7 +4,7 @@ package main
 import (
 	"context"
 
-	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/user"
+	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/auth"
 	"github.com/jmoiron/sqlx"
 	uuid "github.com/satori/go.uuid"
 )
