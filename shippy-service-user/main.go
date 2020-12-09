@@ -5,6 +5,7 @@ import (
 
 	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/user"
 	"github.com/micro/go-micro/v2"
+	_ "github.com/micro/go-plugins/broker/nats/v2"
 )
 
 const schema = `
@@ -46,13 +47,18 @@ func main() {
 	service := micro.NewService(
 		micro.Name("go.micro.srv.user"),
 		micro.Version("latest"),
+		//	micro.Broker(nats.NewBroker()),
 	)
 
 	// Init will parse the command line flags.
 	service.Init()
 
+	publisher := micro.NewEvent("user.created", service.Client())
+
 	// Register handler
-	if err := pb.RegisterUserServiceHandler(service.Server(), &handler{repo, tokenService}); err != nil {
+	if err := pb.RegisterUserServiceHandler(service.Server(), &handler{
+		repo, tokenService, publisher,
+	}); err != nil {
 		log.Panic(err)
 	}
 

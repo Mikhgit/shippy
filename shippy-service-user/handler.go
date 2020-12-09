@@ -4,6 +4,7 @@ package main
 import (
 	"context"
 	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/user"
+	micro "github.com/micro/go-micro/v2"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -15,6 +16,7 @@ type authable interface {
 type handler struct {
 	repository   Repository
 	tokenService authable
+	Publisher    micro.Publisher
 }
 
 func (s *handler) Get(ctx context.Context, req *pb.User, res *pb.Response) error {
@@ -61,6 +63,7 @@ func (s *handler) Auth(ctx context.Context, req *pb.User, res *pb.Token) error {
 }
 
 func (s *handler) Create(ctx context.Context, req *pb.User, res *pb.Response) error {
+	// Generates a hashed version of our password
 	hashedPass, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return err
@@ -68,6 +71,11 @@ func (s *handler) Create(ctx context.Context, req *pb.User, res *pb.Response) er
 
 	req.Password = string(hashedPass)
 	if err := s.repository.Create(ctx, MarshalUser(req)); err != nil {
+		return err
+	}
+
+	res.User = req
+	if err := s.Publisher.Publish(ctx, req); err != nil {
 		return err
 	}
 
