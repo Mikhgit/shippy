@@ -17,22 +17,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1167cba-b8af-46e4-9b68-68d761a724e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/shippy-ui/.eslintcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/Authenticate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/CreateConsignment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shippy-ui/src/setupTests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-cli-consignment/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-cli-consignment/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-cli-consignment/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-cli-consignment/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-cli-consignment/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-cli-consignment/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-cli-user/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-cli-user/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-cli-user/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-cli-user/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shippy-cli-user/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-cli-user/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-consignment/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-consignment/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-consignment/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-consignment/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shippy-service-consignment/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-consignment/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-email/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-email/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-email/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-email/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-email/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-email/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shippy-service-user/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-user/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-user/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-user/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-user/proto/user/user.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/proto/auth/auth.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-user/proto/user/user.pb.micro.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/proto/auth/auth.pb.micro.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-user/proto/user/user.proto" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/proto/auth/auth.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-user/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-user/token_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-user/token_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shippy-service-vessel/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-vessel/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shippy-service-vessel/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/shippy-service-vessel/go.mod" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +95,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
@@ -87,7 +107,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.cli-consignment">
+  <component name="RunManager" selected="Go Build.go build shippy-user-cli">
     <configuration name="cli-consignment" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="shippy" />
       <working_directory value="$PROJECT_DIR$/shippy-cli-consignment" />
@@ -97,17 +117,10 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build " type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build github.com/Mikhgit/shippy/shippy-service-user" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="shippy" />
       <working_directory value="$PROJECT_DIR$/shippy-service-user" />
-      <envs>
-        <env name="MICRO_ADDRESS" value="50051" />
-        <env name="DB_HOST" value="localhost" />
-        <env name="DB_USER" value="admin" />
-        <env name="DB_PASSWORD" value="password" />
-        <env name="DB_NAME" value="postgres" />
-      </envs>
-      <kind value="FILE" />
+      <kind value="PACKAGE" />
       <package value="github.com/Mikhgit/shippy/shippy-service-user" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
@@ -117,6 +130,14 @@
       <working_directory value="$PROJECT_DIR$/shippy-cli-user" />
       <kind value="PACKAGE" />
       <package value="shippy-user-cli" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="service-consignment" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="shippy" />
+      <working_directory value="$PROJECT_DIR$/shippy-service-consignment" />
+      <kind value="FILE" />
+      <package value="github.com/Mikhgit/shippy/shippy-service-consignment" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
@@ -157,18 +178,51 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.user: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="user" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.vessel: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="vessel" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml.database: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.datastore: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.user: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.vessel: Compose Deployment" />
       <item itemvalue="Go Build.service-user" />
       <item itemvalue="Go Build.cli-consignment" />
       <item itemvalue="Go Build.service-email" />
+      <item itemvalue="Go Build.go build github.com/Mikhgit/shippy/shippy-service-user" />
+      <item itemvalue="Go Build.service-consignment" />
       <item itemvalue="Go Build.go build shippy-user-cli" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build shippy-user-cli" />
-        <item itemvalue="Go Build.service-user" />
+        <item itemvalue="Go Build.service-consignment" />
+        <item itemvalue="Docker.docker-compose.yml.user: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.vessel: Compose Deployment" />
+        <item itemvalue="Go Build.go build github.com/Mikhgit/shippy/shippy-service-user" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +264,8 @@
     <MESSAGE value="Add shippy-cli-user" />
     <MESSAGE value="Bug fix (lesson 4)" />
     <MESSAGE value="Add shippy-service-email (lesson 5)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add shippy-service-email (lesson 5)" />
+    <MESSAGE value="Rename micro services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename micro services" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
@@ -229,10 +284,10 @@
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state x="299" y="391" width="1384" height="304" key="#SQL_Dialects/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607425256890" />
-    <state x="480" y="75" width="800" height="892" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607530870059">
+    <state x="480" y="75" width="800" height="892" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607593010357">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state x="480" y="75" width="800" height="892" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607530870059" />
+    <state x="480" y="75" width="800" height="892" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607593010357" />
     <state x="2307" y="613" width="581" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607193054544">
       <screen x="1920" y="414" width="1366" height="768" />
     </state>
@@ -245,14 +300,14 @@
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state x="813" y="280" width="817" height="604" key="#xdebugger.evaluate/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607452098532" />
-    <state x="577" y="135" width="912" height="646" key="CommitChangelistDialog2" timestamp="1607531225392">
+    <state x="561" y="320" width="912" height="646" key="CommitChangelistDialog2" timestamp="1607543608364">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state x="577" y="135" width="912" height="646" key="CommitChangelistDialog2/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607531225392" />
-    <state x="482" y="138" width="1092" height="646" key="DiffContextDialog" timestamp="1607531169168">
+    <state x="561" y="320" width="912" height="646" key="CommitChangelistDialog2/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607543608364" />
+    <state x="482" y="138" width="1092" height="646" key="DiffContextDialog" timestamp="1607608975358">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state x="482" y="138" width="1092" height="646" key="DiffContextDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607531169168" />
+    <state x="482" y="138" width="1092" height="646" key="DiffContextDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607608975358" />
     <state x="761" y="291" width="424" height="491" key="FileChooserDialogImpl" timestamp="1607376581430">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
@@ -261,42 +316,42 @@
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state x="826" y="454" width="344" height="178" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607465609186" />
-    <state width="1802" height="367" key="GridCell.Tab.0.bottom" timestamp="1607542845174">
+    <state width="1802" height="310" key="GridCell.Tab.0.bottom" timestamp="1607608905363">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state width="1320" height="192" key="GridCell.Tab.0.bottom/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607193553339" />
-    <state width="1802" height="367" key="GridCell.Tab.0.bottom/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
-    <state width="1802" height="367" key="GridCell.Tab.0.center" timestamp="1607542845174">
+    <state width="1802" height="310" key="GridCell.Tab.0.bottom/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607608905363" />
+    <state width="1802" height="310" key="GridCell.Tab.0.center" timestamp="1607608905363">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state width="1320" height="192" key="GridCell.Tab.0.center/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607193553338" />
-    <state width="1802" height="367" key="GridCell.Tab.0.center/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
-    <state width="1802" height="367" key="GridCell.Tab.0.left" timestamp="1607542845174">
+    <state width="1802" height="310" key="GridCell.Tab.0.center/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607608905363" />
+    <state width="1802" height="310" key="GridCell.Tab.0.left" timestamp="1607608905363">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state width="1320" height="192" key="GridCell.Tab.0.left/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607193553338" />
-    <state width="1802" height="367" key="GridCell.Tab.0.left/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
-    <state width="1802" height="367" key="GridCell.Tab.0.right" timestamp="1607542845174">
+    <state width="1802" height="310" key="GridCell.Tab.0.left/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607608905363" />
+    <state width="1802" height="310" key="GridCell.Tab.0.right" timestamp="1607608905363">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state width="1320" height="192" key="GridCell.Tab.0.right/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607193553338" />
-    <state width="1802" height="367" key="GridCell.Tab.0.right/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
-    <state width="1802" height="367" key="GridCell.Tab.1.bottom" timestamp="1607542845174">
+    <state width="1802" height="310" key="GridCell.Tab.0.right/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607608905363" />
+    <state width="1802" height="310" key="GridCell.Tab.1.bottom" timestamp="1607608905363">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state width="1802" height="367" key="GridCell.Tab.1.bottom/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
-    <state width="1802" height="367" key="GridCell.Tab.1.center" timestamp="1607542845174">
+    <state width="1802" height="310" key="GridCell.Tab.1.bottom/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607608905363" />
+    <state width="1802" height="310" key="GridCell.Tab.1.center" timestamp="1607608905363">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state width="1802" height="367" key="GridCell.Tab.1.center/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
-    <state width="1802" height="367" key="GridCell.Tab.1.left" timestamp="1607542845174">
+    <state width="1802" height="310" key="GridCell.Tab.1.center/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607608905363" />
+    <state width="1802" height="310" key="GridCell.Tab.1.left" timestamp="1607608905363">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state width="1802" height="367" key="GridCell.Tab.1.left/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
-    <state width="1802" height="367" key="GridCell.Tab.1.right" timestamp="1607542845174">
+    <state width="1802" height="310" key="GridCell.Tab.1.left/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607608905363" />
+    <state width="1802" height="310" key="GridCell.Tab.1.right" timestamp="1607608905363">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state width="1802" height="367" key="GridCell.Tab.1.right/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607542845174" />
+    <state width="1802" height="310" key="GridCell.Tab.1.right/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607608905363" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1607448597197">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
@@ -310,10 +365,10 @@
     </state>
     <state x="2092" y="445" width="1022" height="737" key="SettingsEditor/1920.414.1366.768/72.441.1848.639@1920.414.1366.768" timestamp="1607108868753" />
     <state x="292" y="214" width="1373" height="639" key="SettingsEditor/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607376595224" />
-    <state x="591" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1607532513301">
+    <state x="591" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1607543615008">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state x="591" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607532513301" />
+    <state x="591" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607543615008" />
     <state width="924" height="418" key="XDebugger.FullValuePopup" timestamp="1607451551668">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
@@ -343,10 +398,10 @@
       <screen x="72" y="441" width="1848" height="639" />
     </state>
     <state x="800" y="452" width="381" height="183" key="git4idea.remote.GitConfigureRemotesDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607279817640" />
-    <state x="721" y="371" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1607204723242">
+    <state x="721" y="371" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1607544448881">
       <screen x="72" y="441" width="1848" height="639" />
     </state>
-    <state x="721" y="371" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607204723242" />
+    <state x="721" y="371" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/1920.414.1366.768/72.441.1848.639@72.441.1848.639" timestamp="1607544448881" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

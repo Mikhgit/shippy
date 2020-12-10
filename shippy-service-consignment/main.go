@@ -12,7 +12,7 @@ import (
 	"os"
 
 	pb "github.com/Mikhgit/shippy/shippy-service-consignment/proto/consignment"
-	userService "github.com/Mikhgit/shippy/shippy-service-user/proto/user"
+	userService "github.com/Mikhgit/shippy/shippy-service-user/proto/auth"
 	vesselProto "github.com/Mikhgit/shippy/shippy-service-vessel/proto/vessel"
 	"github.com/micro/go-micro/v2"
 )
@@ -39,7 +39,7 @@ func AuthWrapper(fn server.HandlerFunc) server.HandlerFunc {
 		log.Println("Authenticating with token: ", token)
 
 		// Auth here
-		authClient := userService.NewUserService("shippy.auth", client.DefaultClient)
+		authClient := userService.NewAuthService("shippy.auth", client.DefaultClient)
 		_, err := authClient.ValidateToken(context.Background(), &userService.Token{
 			Token: token,
 		})

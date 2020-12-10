@@ -2,6 +2,8 @@ module github.com/Mikhgit/shippy/shippy-service-user
 
 go 1.14
 
+replace github.com/lucas-clemente/quic-go => github.com/lucas-clemente/quic-go v0.19.3
+
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/golang/protobuf v1.4.3
