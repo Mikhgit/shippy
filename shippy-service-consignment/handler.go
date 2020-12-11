@@ -3,10 +3,10 @@ package main
 
 import (
 	"context"
-
 	pb "github.com/Mikhgit/shippy/shippy-service-consignment/proto/consignment"
 	vesselProto "github.com/Mikhgit/shippy/shippy-service-vessel/proto/vessel"
 	"github.com/pkg/errors"
+	"log"
 )
 
 type handler struct {
@@ -41,6 +41,8 @@ func (s *handler) CreateConsignment(ctx context.Context, req *pb.Consignment, re
 	if err = s.repository.Create(ctx, MarshalConsignment(req)); err != nil {
 		return err
 	}
+
+	log.Println("Created new Consignment: ", req)
 
 	res.Created = true
 	res.Consignment = req

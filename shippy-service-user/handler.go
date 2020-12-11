@@ -83,7 +83,7 @@ func (s *handler) Create(ctx context.Context, req *pb.User, res *pb.Response) er
 
 	res.User = req
 	if err := s.Publisher.Publish(ctx, req); err != nil {
-		return errors.New(fmt.Sprintf("error publishing event: %v", err))
+		log.Printf("error publishing event: %v\n", err)
 	}
 
 	// Strip the password back out, so's we're not returning it

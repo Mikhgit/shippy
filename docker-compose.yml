@@ -30,17 +30,18 @@ services:
     ports:
       - 50053:50051
     environment:
-      MICRO_ADDRESS: ":50051"
+      MICRO_SERVER_ADDRESS: ":50051"
+      MICRO_BROKER: "nats"
       DB_HOST: "database"
       DB_USER: "admin"
       DB_PASSWORD: "password"
       DB_NAME: "postgres"
 
   # Commands
-  cli:
-    build: ./shippy-cli-consignment
-  user-cli:
-    build: ./shippy-cli-user
+  #  cli:
+  #    build: ./shippy-cli-consignment
+  #  user-cli:
+  #    build: ./shippy-cli-user
 
   # Database tier
   datastore:
@@ -63,7 +64,17 @@ services:
     ports:
       - 5432:5432
 
-  broker:
+  event-broker-nats:
     image: nats
     ports:
       - 4222:4222
+
+  rpc-api:
+    image: micro/micro:v2.9.3
+    environment:
+      MICRO_SERVER_ADDRESS: ":50051"
+    command:
+      - "api"
+      - "--handler=rpc"
+    ports:
+      - 8080-8081:8080-8081

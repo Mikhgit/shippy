@@ -11,7 +11,6 @@ require (
 	github.com/lib/pq v1.9.0
 	github.com/micro/go-micro/v2 v2.9.1
 	github.com/micro/go-plugins/broker/nats/v2 v2.9.1
-	github.com/micro/go-plugins/registry/mdns/v2 v2.9.1
 	github.com/satori/go.uuid v1.2.0
 	golang.org/x/crypto v0.0.0-20201203163018-be400aefbc4c
 	google.golang.org/protobuf v1.23.0

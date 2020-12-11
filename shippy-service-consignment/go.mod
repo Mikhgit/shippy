@@ -6,7 +6,7 @@ replace github.com/lucas-clemente/quic-go => github.com/lucas-clemente/quic-go v
 
 require (
 	github.com/Mikhgit/shippy/shippy-service-user v0.0.0-20201209195328-90089c28dc4b
-	github.com/Mikhgit/shippy/shippy-service-vessel v0.0.0-20201206204218-1beca43f6202
+	github.com/Mikhgit/shippy/shippy-service-vessel v0.0.0-20201210140420-7f16b516884e
 	github.com/golang/protobuf v1.4.3
 	github.com/micro/go-micro/v2 v2.9.1
 	github.com/pkg/errors v0.9.1

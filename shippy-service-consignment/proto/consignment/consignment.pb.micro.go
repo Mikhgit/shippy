@@ -33,34 +33,34 @@ var _ context.Context
 var _ client.Option
 var _ server.Option
 
-// Api Endpoints for ShippingService service
+// Api Endpoints for ConsignmentService service
 
-func NewShippingServiceEndpoints() []*api.Endpoint {
+func NewConsignmentServiceEndpoints() []*api.Endpoint {
 	return []*api.Endpoint{}
 }
 
-// Client API for ShippingService service
+// Client API for ConsignmentService service
 
-type ShippingService interface {
+type ConsignmentService interface {
 	CreateConsignment(ctx context.Context, in *Consignment, opts ...client.CallOption) (*Response, error)
 	// Created a new method
 	GetConsignments(ctx context.Context, in *GetRequest, opts ...client.CallOption) (*Response, error)
 }
 
-type shippingService struct {
+type consignmentService struct {
 	c    client.Client
 	name string
 }
 
-func NewShippingService(name string, c client.Client) ShippingService {
-	return &shippingService{
+func NewConsignmentService(name string, c client.Client) ConsignmentService {
+	return &consignmentService{
 		c:    c,
 		name: name,
 	}
 }
 
-func (c *shippingService) CreateConsignment(ctx context.Context, in *Consignment, opts ...client.CallOption) (*Response, error) {
-	req := c.c.NewRequest(c.name, "ShippingService.CreateConsignment", in)
+func (c *consignmentService) CreateConsignment(ctx context.Context, in *Consignment, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "ConsignmentService.CreateConsignment", in)
 	out := new(Response)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
@@ -69,8 +69,8 @@ func (c *shippingService) CreateConsignment(ctx context.Context, in *Consignment
 	return out, nil
 }
 
-func (c *shippingService) GetConsignments(ctx context.Context, in *GetRequest, opts ...client.CallOption) (*Response, error) {
-	req := c.c.NewRequest(c.name, "ShippingService.GetConsignments", in)
+func (c *consignmentService) GetConsignments(ctx context.Context, in *GetRequest, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "ConsignmentService.GetConsignments", in)
 	out := new(Response)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
@@ -79,34 +79,34 @@ func (c *shippingService) GetConsignments(ctx context.Context, in *GetRequest, o
 	return out, nil
 }
 
-// Server API for ShippingService service
+// Server API for ConsignmentService service
 
-type ShippingServiceHandler interface {
+type ConsignmentServiceHandler interface {
 	CreateConsignment(context.Context, *Consignment, *Response) error
 	// Created a new method
 	GetConsignments(context.Context, *GetRequest, *Response) error
 }
 
-func RegisterShippingServiceHandler(s server.Server, hdlr ShippingServiceHandler, opts ...server.HandlerOption) error {
-	type shippingService interface {
+func RegisterConsignmentServiceHandler(s server.Server, hdlr ConsignmentServiceHandler, opts ...server.HandlerOption) error {
+	type consignmentService interface {
 		CreateConsignment(ctx context.Context, in *Consignment, out *Response) error
 		GetConsignments(ctx context.Context, in *GetRequest, out *Response) error
 	}
-	type ShippingService struct {
-		shippingService
+	type ConsignmentService struct {
+		consignmentService
 	}
-	h := &shippingServiceHandler{hdlr}
-	return s.Handle(s.NewHandler(&ShippingService{h}, opts...))
+	h := &consignmentServiceHandler{hdlr}
+	return s.Handle(s.NewHandler(&ConsignmentService{h}, opts...))
 }
 
-type shippingServiceHandler struct {
-	ShippingServiceHandler
+type consignmentServiceHandler struct {
+	ConsignmentServiceHandler
 }
 
-func (h *shippingServiceHandler) CreateConsignment(ctx context.Context, in *Consignment, out *Response) error {
-	return h.ShippingServiceHandler.CreateConsignment(ctx, in, out)
+func (h *consignmentServiceHandler) CreateConsignment(ctx context.Context, in *Consignment, out *Response) error {
+	return h.ConsignmentServiceHandler.CreateConsignment(ctx, in, out)
 }
 
-func (h *shippingServiceHandler) GetConsignments(ctx context.Context, in *GetRequest, out *Response) error {
-	return h.ShippingServiceHandler.GetConsignments(ctx, in, out)
+func (h *consignmentServiceHandler) GetConsignments(ctx context.Context, in *GetRequest, out *Response) error {
+	return h.ConsignmentServiceHandler.GetConsignments(ctx, in, out)
 }

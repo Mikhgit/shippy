@@ -15,18 +15,18 @@ class Authenticate extends React.Component {
     }
 
     login = () => {
-        fetch(`http://localhost:8080/rpc`, {
+        fetch(`http://localhost:8080/auth/auth`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                request: {
-                    email: this.state.email,
-                    password: this.state.password,
-                },
-                service: 'shippy.auth',
-                method: 'Auth.Auth',
+                //     request: {
+                email: this.state.email,
+                password: this.state.password,
+                // },
+                // service: 'go.micro.api.auth',
+                // method: 'Auth.Auth',
             }),
         })
             .then(res => res.json())
@@ -36,34 +36,34 @@ class Authenticate extends React.Component {
                     token: res.token,
                     authenticated: true,
                 });
+                localStorage.setItem('token', res.token);
             })
             .catch(err => this.setState({err, authenticated: false,}));
     }
 
     signup = () => {
-        fetch(`http://localhost:8080/rpc`, {
+        fetch(`http://localhost:8080/auth/create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                request: {
-                    email: this.state.email,
-                    password: this.state.password,
-                    name: this.state.name,
-                },
-                method: 'Auth.Create',
-                service: 'shippy.auth',
+                // request: {
+                email: this.state.email,
+                password: this.state.password,
+                name: this.state.name,
+                // },
+                // method: 'Auth.Create',
+                // service: 'go.micro.api.auth',
             }),
         })
             .then((res) => res.json())
             .then((res) => {
-                this.props.onAuth(res.token.token);
+                this.props.onAuth(res.token);
                 this.setState({
-                    token: res.token.token,
-                    authenticated: true,
+                    token: res.token,
+                    authenticated: false,
                 });
-                localStorage.setItem('token', res.token.token);
             })
             .catch(err => this.setState({err, authenticated: false,}));
     }

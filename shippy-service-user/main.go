@@ -6,7 +6,6 @@ import (
 	pb "github.com/Mikhgit/shippy/shippy-service-user/proto/auth"
 	"github.com/micro/go-micro/v2"
 	_ "github.com/micro/go-plugins/broker/nats/v2"
-	_ "github.com/micro/go-plugins/registry/mdns/v2"
 )
 
 const schema = `
@@ -41,7 +40,7 @@ func main() {
 
 	// Create a new service. Optionally include some options here.
 	service := micro.NewService(
-		micro.Name("shippy.auth"),
+		micro.Name("go.micro.api.auth"),
 		micro.Version("latest"),
 		//	micro.Broker(nats.NewBroker()),
 	)

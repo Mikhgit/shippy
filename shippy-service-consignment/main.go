@@ -10,6 +10,7 @@ import (
 	"github.com/micro/go-micro/v2/server"
 	"log"
 	"os"
+	"strings"
 
 	pb "github.com/Mikhgit/shippy/shippy-service-consignment/proto/consignment"
 	userService "github.com/Mikhgit/shippy/shippy-service-user/proto/auth"
@@ -35,13 +36,16 @@ func AuthWrapper(fn server.HandlerFunc) server.HandlerFunc {
 		}
 
 		// Note this is now uppercase (not entirely sure why this is...)
-		token := meta["Token"]
-		log.Println("Authenticating with token: ", token)
+		token := meta["Authorization"]
+		if len(strings.Fields(token)) != 2 {
+			return errors.New("invalid token")
+		}
+		log.Println("Authenticating with token: ", strings.Fields(token)[1])
 
 		// Auth here
-		authClient := userService.NewAuthService("shippy.auth", client.DefaultClient)
+		authClient := userService.NewAuthService("go.micro.api.auth", client.DefaultClient)
 		_, err := authClient.ValidateToken(context.Background(), &userService.Token{
-			Token: token,
+			Token: strings.Fields(token)[1],
 		})
 		if err != nil {
 			return err
@@ -56,8 +60,8 @@ func main() {
 	// Create a new service. Optionally include some options here.
 	srv := micro.NewService(
 
-		// This name must match the package name given in your protobuf definition
-		micro.Name("go.micro.srv.consignment"),
+		// This name must match the service name given in your protobuf definition
+		micro.Name("go.micro.api.consignment-service"),
 		micro.Version("latest"),
 		// Our auth middleware
 		micro.WrapHandler(AuthWrapper),
@@ -79,11 +83,11 @@ func main() {
 	consignmentCollection := client.Database("shippy").Collection("consignments")
 
 	repository := &MongoRepository{consignmentCollection}
-	vesselClient := vesselProto.NewVesselService("shippy.vessel", srv.Client())
+	vesselClient := vesselProto.NewVesselService("go.micro.api.vessel", srv.Client())
 	h := &handler{repository, vesselClient}
 
 	// Register handlers
-	pb.RegisterShippingServiceHandler(srv.Server(), h)
+	err = pb.RegisterConsignmentServiceHandler(srv.Server(), h)
 
 	// Run the server
 	if err := srv.Run(); err != nil {

@@ -3,7 +3,7 @@ syntax = "proto3";
 
 package consignment;
 
-service ShippingService {
+service ConsignmentService {
   rpc CreateConsignment(Consignment) returns (Response) {}
 
   // Created a new method

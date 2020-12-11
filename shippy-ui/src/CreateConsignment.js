@@ -17,15 +17,16 @@ class CreateConsignment extends React.Component {
     }
 
     componentWillMount() {
-        fetch(`http://localhost:8080/rpc`, {
+        fetch(`http://localhost:8080/consignment-service/getConsignments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
-                service: 'shippy.consignment',
-                method: 'ConsignmentService.Get',
-                request: {},
+                // service: 'go.micro.api.consignment',
+                // method: 'ConsignmentService.Get',
+                // request: {},
             })
         })
             .then(req => req.json())
@@ -38,16 +39,19 @@ class CreateConsignment extends React.Component {
 
     create = () => {
         const consignment = this.state;
-        fetch(`http://localhost:8080/rpc`, {
+        fetch(`http://localhost:8080/consignment-service/CreateConsignment`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
             },
-            body: JSON.stringify({
-                service: 'shippy.consignment',
-                method: 'ConsignmentService.Create',
-                request: _.omit(consignment, 'created', 'consignments'),
-            }),
+            body: JSON.stringify(//{
+                // service: 'go.micro.api.consignment',
+                // method: 'ConsignmentService.Create',
+                //request:
+                _.omit(consignment, 'created', 'consignments'),
+                //}
+            ),
         })
             .then((res) => res.json())
             .then((res) => {
